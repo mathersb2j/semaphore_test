@@ -1,7 +1,7 @@
 ---
 
 - name: ping router
-  hosts: routers
+  hosts: all
   connection: local
   tasks:
   - name: Ping
