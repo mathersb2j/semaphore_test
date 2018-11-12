@@ -8,5 +8,5 @@
     shell: ping -c 3 {{inventory_hostname}}
     register: result
   - debug:
-     msg: "{{result.stdout}}"
+     msg: "{{result.stdout_lines}}"
     when: result.rc == 0
