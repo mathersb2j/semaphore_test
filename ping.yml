@@ -1,0 +1,12 @@
+---
+
+- name: ping router
+  hosts: routers
+  connection: local
+  tasks:
+  - name: Ping
+    shell: ping -c 3 {{inventory_hostname}}
+    register: result
+  - debug:
+     msg: "{{result.stdout}}"
+    when: result.rc == 0
